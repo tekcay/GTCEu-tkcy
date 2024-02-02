@@ -48,6 +48,11 @@ public class ConfigHolder {
     @Config.RequiresMcRestart
     public static ProcessingHandlers processingHandlers = new ProcessingHandlers();
 
+    @Config.Comment("Config options to disable other recipes")
+    @Config.Name("Other stuff")
+    @Config.RequiresMcRestart
+    public static OtherStuff otherStuff = new OtherStuff();
+
     public static class MachineOptions {
 
         @Config.Comment({ "Whether insufficient energy supply should reset Machine recipe progress to zero.",
@@ -713,5 +718,14 @@ public class ConfigHolder {
         public boolean removeWireRecipes;
         public boolean removeFoilRecipes;
         public boolean removeFineWireRecipes;
+    }
+
+    public static class OtherStuff {
+
+        @Config.Comment({ "Remove motors, pumps etc. recipes" })
+        public boolean removeComponentRecipes;
+
+        @Config.Comment({ "Remove circuit assembler recipes using liquid tin" })
+        public boolean removeTinCircuitRecipes;
     }
 }

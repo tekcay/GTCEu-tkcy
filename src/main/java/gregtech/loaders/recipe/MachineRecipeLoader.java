@@ -63,7 +63,9 @@ public class MachineRecipeLoader {
         AssemblyLineLoader.init();
         FusionLoader.init();
         AssemblerRecipeLoader.init();
-        ComponentRecipes.register();
+        if (!ConfigHolder.otherStuff.removeComponentRecipes) {
+            ComponentRecipes.register();
+        }
         MiscRecipeLoader.init();
         BatteryRecipes.init();
         CircuitRecipes.init();
