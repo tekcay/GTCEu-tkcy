@@ -43,6 +43,11 @@ public class ConfigHolder {
     @Config.RequiresMcRestart
     public static WorldGenOptions worldgen = new WorldGenOptions();
 
+    @Config.Comment("Config options for handling ores processing handlers")
+    @Config.Name("Processing handlers")
+    @Config.RequiresMcRestart
+    public static ProcessingHandlers processingHandlers = new ProcessingHandlers();
+
     public static class MachineOptions {
 
         @Config.Comment({ "Whether insufficient energy supply should reset Machine recipe progress to zero.",
@@ -700,5 +705,13 @@ public class ConfigHolder {
         @Config.RangeInt(min = 1, max = 512)
         @Config.Comment({ "The EU/t consumption of the NanoSaber.", "Default: 64" })
         public int energyConsumption = 64;
+    }
+
+    public static class ProcessingHandlers {
+
+        public boolean removeRotorRecipes;
+        public boolean removeWireRecipes;
+        public boolean removeFoilRecipes;
+        public boolean removeFineWireRecipes;
     }
 }
