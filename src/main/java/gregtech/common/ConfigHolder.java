@@ -43,15 +43,10 @@ public class ConfigHolder {
     @Config.RequiresMcRestart
     public static WorldGenOptions worldgen = new WorldGenOptions();
 
-    @Config.Comment("Config options for handling ores processing handlers")
-    @Config.Name("Processing handlers")
+    @Config.Comment("Config options for World Generation features")
+    @Config.Name("Worldgen Options")
     @Config.RequiresMcRestart
-    public static ProcessingHandlers processingHandlers = new ProcessingHandlers();
-
-    @Config.Comment("Config options to disable other recipes")
-    @Config.Name("Other stuff")
-    @Config.RequiresMcRestart
-    public static OtherStuff otherStuff = new OtherStuff();
+    public static RecipeRemovalConfig recipeRemovalConfig = new RecipeRemovalConfig();
 
     public static class MachineOptions {
 
@@ -712,6 +707,19 @@ public class ConfigHolder {
         public int energyConsumption = 64;
     }
 
+    public static class RecipeRemovalConfig {
+
+        @Config.Comment("Config options for handling ores processing handlers")
+        @Config.Name("Processing handlers")
+        @Config.RequiresMcRestart
+        public ProcessingHandlers processingHandlers = new ProcessingHandlers();
+
+        @Config.Comment("Config options to disable other recipes")
+        @Config.Name("Other stuff")
+        @Config.RequiresMcRestart
+        public OtherStuff otherStuff = new OtherStuff();
+    }
+
     public static class ProcessingHandlers {
 
         public boolean removeRotorRecipes;
@@ -727,5 +735,11 @@ public class ConfigHolder {
 
         @Config.Comment({ "Remove circuit assembler recipes using liquid tin" })
         public boolean removeTinCircuitRecipes;
+
+        @Config.Comment({ "Remove ulv to uhv casing shaped recipes" })
+        public boolean removeTierCasingRecipes;
+
+        @Config.Comment({ "Remove all electrolysis recipes including auto-generated recipes" })
+        public boolean removeElectrolysisRecipes;
     }
 }

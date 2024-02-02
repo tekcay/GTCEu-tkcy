@@ -41,15 +41,15 @@ public class PartsRecipeHandler {
         OrePrefix.plateDense.addProcessingHandler(PropertyKey.DUST, PartsRecipeHandler::processPlateDense);
 
         OrePrefix.turbineBlade.addProcessingHandler(PropertyKey.INGOT, PartsRecipeHandler::processTurbine);
-        if (!ConfigHolder.processingHandlers.removeRotorRecipes) {
+        if (!ConfigHolder.recipeRemovalConfig.processingHandlers.removeRotorRecipes) {
             OrePrefix.rotor.addProcessingHandler(PropertyKey.INGOT, PartsRecipeHandler::processRotor);
         }
         OrePrefix.bolt.addProcessingHandler(PropertyKey.DUST, PartsRecipeHandler::processBolt);
         OrePrefix.screw.addProcessingHandler(PropertyKey.DUST, PartsRecipeHandler::processScrew);
-        if (!ConfigHolder.processingHandlers.removeFineWireRecipes) {
+        if (!ConfigHolder.recipeRemovalConfig.processingHandlers.removeFineWireRecipes) {
             OrePrefix.wireFine.addProcessingHandler(PropertyKey.INGOT, PartsRecipeHandler::processFineWire);
         }
-        if (!ConfigHolder.processingHandlers.removeFoilRecipes) {
+        if (!ConfigHolder.recipeRemovalConfig.processingHandlers.removeFoilRecipes) {
             OrePrefix.foil.addProcessingHandler(PropertyKey.INGOT, PartsRecipeHandler::processFoil);
         }
         OrePrefix.lens.addProcessingHandler(PropertyKey.GEM, PartsRecipeHandler::processLens);

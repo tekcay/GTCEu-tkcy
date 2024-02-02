@@ -494,7 +494,7 @@ public final class RecipeMaps {
                     .onRecipeBuild(recipeBuilder -> {
                         recipeBuilder.invalidateOnBuildAction();
                         if (recipeBuilder.getFluidInputs().isEmpty()) {
-                            if (!ConfigHolder.otherStuff.removeTinCircuitRecipes) {
+                            if (!ConfigHolder.recipeRemovalConfig.otherStuff.removeTinCircuitRecipes) {
                                 recipeBuilder.copy()
                                         .fluidInputs(Materials.SolderingAlloy.getFluid(Math.max(1,
                                                 (GTValues.L / 2) * recipeBuilder.getSolderMultiplier())))
