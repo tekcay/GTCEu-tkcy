@@ -757,5 +757,20 @@ public class ConfigHolder {
         @Config.Name("disableElectrolysisRecipes")
         @Config.RequiresMcRestart
         public boolean disableElectrolysisRecipes;
+
+        @Config.Comment({ "disable hydrocarbons cracking" })
+        @Config.Name("disableCrackingRecipes")
+        @Config.RequiresMcRestart
+        public boolean disableCrackingRecipes;
+
+        @Config.Comment({ "disable desulfurization recipes" })
+        @Config.Name("disableDesulfurizationRecipes")
+        @Config.RequiresMcRestart
+        public boolean disableDesulfurizationRecipes;
+
+        @Config.Comment({ "disable wirecoil recipes" })
+        @Config.Name("disableWirecoilRecipes")
+        @Config.RequiresMcRestart
+        public boolean disableWirecoilRecipes;
     }
 }
