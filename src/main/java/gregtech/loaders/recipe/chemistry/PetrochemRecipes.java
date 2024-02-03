@@ -11,7 +11,7 @@ import static gregtech.api.unification.ore.OrePrefix.dust;
 public class PetrochemRecipes {
 
     public static void init() {
-        if (!ConfigHolder.recipeRemovalConfig.otherStuff.disableCrackingRecipes) {
+        if (!ConfigHolder.recipeDisablingConfig.otherStuff.disableCrackingRecipes) {
             moderatelyCrack(Ethane, HydroCrackedEthane, SteamCrackedEthane);
             moderatelyCrack(Ethylene, HydroCrackedEthylene, SteamCrackedEthylene);
             moderatelyCrack(Propene, HydroCrackedPropene, SteamCrackedPropene);
@@ -62,7 +62,7 @@ public class PetrochemRecipes {
                 .fluidOutputs(SulfuricGas.getFluid(60))
                 .duration(20).EUt(96).buildAndRegister();
 
-        if (!ConfigHolder.recipeRemovalConfig.otherStuff.disableDesulfurizationRecipes) {
+        if (!ConfigHolder.recipeDisablingConfig.otherStuff.disableDesulfurizationRecipes) {
             desulfurizationRecipes();
         }
 

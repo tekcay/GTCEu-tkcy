@@ -43,10 +43,10 @@ public class ConfigHolder {
     @Config.RequiresMcRestart
     public static WorldGenOptions worldgen = new WorldGenOptions();
 
-    @Config.Comment("Config options for selectively disable recipes generation")
-    @Config.Name("Recipe removal config")
+    @Config.Comment("Config options to selectively disable recipes generation")
+    @Config.Name("Recipe disabling config")
     @Config.RequiresMcRestart
-    public static RecipeRemovalConfig recipeRemovalConfig = new RecipeRemovalConfig();
+    public static RecipeDisablingConfig recipeDisablingConfig = new RecipeDisablingConfig();
 
     public static class MachineOptions {
 
@@ -707,7 +707,7 @@ public class ConfigHolder {
         public int energyConsumption = 64;
     }
 
-    public static class RecipeRemovalConfig {
+    public static class RecipeDisablingConfig {
 
         @Config.Comment("Config options to disable ores processing handlers generation")
         @Config.Name("Processing handlers recipes generation")

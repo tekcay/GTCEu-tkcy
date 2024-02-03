@@ -63,7 +63,7 @@ public class MachineRecipeLoader {
         AssemblyLineLoader.init();
         FusionLoader.init();
         AssemblerRecipeLoader.init();
-        if (!ConfigHolder.recipeRemovalConfig.otherStuff.disableComponentRecipes) {
+        if (!ConfigHolder.recipeDisablingConfig.otherStuff.disableComponentRecipes) {
             ComponentRecipes.register();
         }
         MiscRecipeLoader.init();
@@ -625,7 +625,7 @@ public class MachineRecipeLoader {
                 .duration(100)
                 .buildAndRegister();
 
-        if (!ConfigHolder.recipeRemovalConfig.otherStuff.disableTierCasingRecipes) {
+        if (!ConfigHolder.recipeDisablingConfig.otherStuff.disableTierCasingRecipes) {
             RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder().EUt(16).input(OrePrefix.plate, WroughtIron, 8)
                     .outputs(MetaBlocks.MACHINE_CASING.getItemVariant(MachineCasingType.ULV)).circuitMeta(8)
                     .duration(25)
@@ -662,7 +662,7 @@ public class MachineRecipeLoader {
                     .buildAndRegister();
         }
 
-        if (!ConfigHolder.recipeRemovalConfig.otherStuff.disableWirecoilRecipes) {
+        if (!ConfigHolder.recipeDisablingConfig.otherStuff.disableWirecoilRecipes) {
             RecipeMaps.ASSEMBLER_RECIPES.recipeBuilder().EUt(VA[LV])
                     .input(OrePrefix.wireGtDouble, Materials.Cupronickel, 8)
                     .input(OrePrefix.foil, Materials.Bronze, 8).fluidInputs(Materials.TinAlloy.getFluid(GTValues.L))
