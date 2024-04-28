@@ -43,10 +43,10 @@ public class ConfigHolder {
     @Config.RequiresMcRestart
     public static WorldGenOptions worldgen = new WorldGenOptions();
 
-    @Config.Comment("Config options to selectively disable recipes generation")
-    @Config.Name("Recipe disabling config")
+    @Config.Comment("Config options for selectively disable recipes generation")
+    @Config.Name("Recipe removal config")
     @Config.RequiresMcRestart
-    public static RecipeDisablingConfig recipeDisablingConfig = new RecipeDisablingConfig();
+    public static RecipeRemovalConfig recipeRemovalConfig = new RecipeRemovalConfig();
 
     public static class MachineOptions {
 
@@ -707,7 +707,7 @@ public class ConfigHolder {
         public int energyConsumption = 64;
     }
 
-    public static class RecipeDisablingConfig {
+    public static class RecipeRemovalConfig {
 
         @Config.Comment("Config options to disable ores processing handlers generation")
         @Config.Name("Processing handlers recipes generation")
@@ -757,20 +757,5 @@ public class ConfigHolder {
         @Config.Name("disableElectrolysisRecipes")
         @Config.RequiresMcRestart
         public boolean disableElectrolysisRecipes;
-
-        @Config.Comment({ "disable hydrocarbons cracking" })
-        @Config.Name("disableCrackingRecipes")
-        @Config.RequiresMcRestart
-        public boolean disableCrackingRecipes;
-
-        @Config.Comment({ "disable desulfurization recipes" })
-        @Config.Name("disableDesulfurizationRecipes")
-        @Config.RequiresMcRestart
-        public boolean disableDesulfurizationRecipes;
-
-        @Config.Comment({ "disable wirecoil recipes" })
-        @Config.Name("disableWirecoilRecipes")
-        @Config.RequiresMcRestart
-        public boolean disableWirecoilRecipes;
     }
 }
