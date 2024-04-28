@@ -1,7 +1,6 @@
 package gregtech.loaders.recipe.chemistry;
 
 import gregtech.api.unification.material.Material;
-import gregtech.common.ConfigHolder;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
@@ -11,24 +10,22 @@ import static gregtech.api.unification.ore.OrePrefix.dust;
 public class PetrochemRecipes {
 
     public static void init() {
-        if (!ConfigHolder.recipeDisablingConfig.otherStuff.disableCrackingRecipes) {
-            moderatelyCrack(Ethane, HydroCrackedEthane, SteamCrackedEthane);
-            moderatelyCrack(Ethylene, HydroCrackedEthylene, SteamCrackedEthylene);
-            moderatelyCrack(Propene, HydroCrackedPropene, SteamCrackedPropene);
-            moderatelyCrack(Propane, HydroCrackedPropane, SteamCrackedPropane);
-            moderatelyCrack(Butane, HydroCrackedButane, SteamCrackedButane);
-            moderatelyCrack(Butene, HydroCrackedButene, SteamCrackedButene);
-            moderatelyCrack(Butadiene, HydroCrackedButadiene, SteamCrackedButadiene);
+        moderatelyCrack(Ethane, HydroCrackedEthane, SteamCrackedEthane);
+        moderatelyCrack(Ethylene, HydroCrackedEthylene, SteamCrackedEthylene);
+        moderatelyCrack(Propene, HydroCrackedPropene, SteamCrackedPropene);
+        moderatelyCrack(Propane, HydroCrackedPropane, SteamCrackedPropane);
+        moderatelyCrack(Butane, HydroCrackedButane, SteamCrackedButane);
+        moderatelyCrack(Butene, HydroCrackedButene, SteamCrackedButene);
+        moderatelyCrack(Butadiene, HydroCrackedButadiene, SteamCrackedButadiene);
 
-            lightlyCrack(HeavyFuel, LightlyHydroCrackedHeavyFuel, LightlySteamCrackedHeavyFuel);
-            severelyCrack(HeavyFuel, SeverelyHydroCrackedHeavyFuel, SeverelySteamCrackedHeavyFuel);
-            lightlyCrack(LightFuel, LightlyHydroCrackedLightFuel, LightlySteamCrackedLightFuel);
-            severelyCrack(LightFuel, SeverelyHydroCrackedLightFuel, SeverelySteamCrackedLightFuel);
-            lightlyCrack(Naphtha, LightlyHydroCrackedNaphtha, LightlySteamCrackedNaphtha);
-            severelyCrack(Naphtha, SeverelyHydroCrackedNaphtha, SeverelySteamCrackedNaphtha);
-            lightlyCrack(RefineryGas, LightlyHydroCrackedGas, LightlySteamCrackedGas);
-            severelyCrack(RefineryGas, SeverelyHydroCrackedGas, SeverelySteamCrackedGas);
-        }
+        lightlyCrack(HeavyFuel, LightlyHydroCrackedHeavyFuel, LightlySteamCrackedHeavyFuel);
+        severelyCrack(HeavyFuel, SeverelyHydroCrackedHeavyFuel, SeverelySteamCrackedHeavyFuel);
+        lightlyCrack(LightFuel, LightlyHydroCrackedLightFuel, LightlySteamCrackedLightFuel);
+        severelyCrack(LightFuel, SeverelyHydroCrackedLightFuel, SeverelySteamCrackedLightFuel);
+        lightlyCrack(Naphtha, LightlyHydroCrackedNaphtha, LightlySteamCrackedNaphtha);
+        severelyCrack(Naphtha, SeverelyHydroCrackedNaphtha, SeverelySteamCrackedNaphtha);
+        lightlyCrack(RefineryGas, LightlyHydroCrackedGas, LightlySteamCrackedGas);
+        severelyCrack(RefineryGas, SeverelyHydroCrackedGas, SeverelySteamCrackedGas);
 
         DISTILLATION_RECIPES.recipeBuilder()
                 .fluidInputs(Oil.getFluid(50))
@@ -62,10 +59,7 @@ public class PetrochemRecipes {
                 .fluidOutputs(SulfuricGas.getFluid(60))
                 .duration(20).EUt(96).buildAndRegister();
 
-        if (!ConfigHolder.recipeDisablingConfig.otherStuff.disableDesulfurizationRecipes) {
-            desulfurizationRecipes();
-        }
-
+        desulfurizationRecipes();
         distillationRecipes();
         distilleryRecipes();
     }
