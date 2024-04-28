@@ -34,7 +34,6 @@ import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.stack.ItemMaterialInfo;
 import gregtech.api.util.AssemblyLineManager;
-import gregtech.common.ConfigHolder;
 import gregtech.core.sound.GTSoundEvents;
 
 import net.minecraft.init.SoundEvents;
@@ -494,24 +493,16 @@ public final class RecipeMaps {
                     .onRecipeBuild(recipeBuilder -> {
                         recipeBuilder.invalidateOnBuildAction();
                         if (recipeBuilder.getFluidInputs().isEmpty()) {
-                            if (!ConfigHolder.recipeRemovalConfig.otherStuff.removeTinCircuitRecipes) {
-                                recipeBuilder.copy()
-                                        .fluidInputs(Materials.SolderingAlloy.getFluid(Math.max(1,
-                                                (GTValues.L / 2) * recipeBuilder.getSolderMultiplier())))
-                                        .buildAndRegister();
+                            recipeBuilder.copy()
+                                    .fluidInputs(Materials.SolderingAlloy.getFluid(Math.max(1,
+                                            (GTValues.L / 2) * recipeBuilder.getSolderMultiplier())))
+                                    .buildAndRegister();
 
-                                // Don't call buildAndRegister as we are mutating the original recipe and already in the
-                                // middle of a buildAndRegister call.
-                                // Adding a second call will result in duplicate recipe generation attempts
-                                recipeBuilder.fluidInputs(Materials.Tin.getFluid(Math.max(1, GTValues.L *
-                                        recipeBuilder.getSolderMultiplier())));
-
-                            } else {
-                                recipeBuilder
-                                        .fluidInputs(Materials.SolderingAlloy.getFluid(Math.max(1,
-                                                (GTValues.L / 2) * recipeBuilder.getSolderMultiplier())))
-                                        .buildAndRegister();
-                            }
+                            // Don't call buildAndRegister as we are mutating the original recipe and already in the
+                            // middle of a buildAndRegister call.
+                            // Adding a second call will result in duplicate recipe generation attempts
+                            recipeBuilder.fluidInputs(Materials.Tin.getFluid(Math.max(1, GTValues.L *
+                                    recipeBuilder.getSolderMultiplier())));
                         }
                     });
 

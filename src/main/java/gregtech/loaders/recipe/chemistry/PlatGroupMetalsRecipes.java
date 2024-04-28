@@ -1,7 +1,5 @@
 package gregtech.loaders.recipe.chemistry;
 
-import gregtech.common.ConfigHolder;
-
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -96,13 +94,11 @@ public class PlatGroupMetalsRecipes {
 
         // PLATINUM
 
-        if (!ConfigHolder.recipeRemovalConfig.otherStuff.removeElectrolysisRecipes) {
-            ELECTROLYZER_RECIPES.recipeBuilder().duration(100).EUt(VA[MV])
-                    .input(dust, PlatinumRaw, 3)
-                    .output(dust, Platinum)
-                    .fluidOutputs(Chlorine.getFluid(800))
-                    .buildAndRegister();
-        }
+        ELECTROLYZER_RECIPES.recipeBuilder().duration(100).EUt(VA[MV])
+                .input(dust, PlatinumRaw, 3)
+                .output(dust, Platinum)
+                .fluidOutputs(Chlorine.getFluid(800))
+                .buildAndRegister();
 
         // PALLADIUM
 
@@ -123,14 +119,12 @@ public class PlatGroupMetalsRecipes {
                 .fluidOutputs(Hydrogen.getFluid(3000))
                 .buildAndRegister();
 
-        if (!ConfigHolder.recipeRemovalConfig.otherStuff.removeElectrolysisRecipes) {
-            ELECTROLYZER_RECIPES.recipeBuilder().duration(100).EUt(VA[MV])
-                    .fluidInputs(RhodiumSulfate.getFluid(1000))
-                    .output(dust, Rhodium, 2)
-                    .fluidOutputs(SulfurTrioxide.getFluid(3000))
-                    .fluidOutputs(Oxygen.getFluid(3000))
-                    .buildAndRegister();
-        }
+        ELECTROLYZER_RECIPES.recipeBuilder().duration(100).EUt(VA[MV])
+                .fluidInputs(RhodiumSulfate.getFluid(1000))
+                .output(dust, Rhodium, 2)
+                .fluidOutputs(SulfurTrioxide.getFluid(3000))
+                .fluidOutputs(Oxygen.getFluid(3000))
+                .buildAndRegister();
 
         CHEMICAL_RECIPES.recipeBuilder().duration(200).EUt(VA[MV])
                 .input(dust, RutheniumTetroxide, 5)
