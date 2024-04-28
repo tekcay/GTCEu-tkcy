@@ -709,53 +709,53 @@ public class ConfigHolder {
 
     public static class RecipeRemovalConfig {
 
-        @Config.Comment("Config options to disable ores processing handlers generation")
-        @Config.Name("Processing handlers recipes generation")
+        @Config.Comment("Config options for handling ores processing handlers")
+        @Config.Name("Processing handlers")
         public ProcessingHandlers processingHandlers = new ProcessingHandlers();
 
-        @Config.Comment("Config options to disable other recipes generation")
-        @Config.Name("Other recipes generation")
+        @Config.Comment("Config options to disable other recipes")
+        @Config.Name("Other stuff")
         public OtherStuff otherStuff = new OtherStuff();
     }
 
     public static class ProcessingHandlers {
 
-        @Config.Name("disableRotorRecipes")
+        @Config.Name("removeRotorRecipes")
         @Config.RequiresMcRestart
-        public boolean disableRotorRecipes;
+        public boolean removeRotorRecipes;
 
-        @Config.Name("disableWireRecipes")
+        @Config.Name("removeWireRecipes")
         @Config.RequiresMcRestart
-        public boolean disableWireRecipes;
+        public boolean removeWireRecipes;
 
-        @Config.Name("disableFoilRecipes")
+        @Config.Name("removeFoilRecipes")
         @Config.RequiresMcRestart
-        public boolean disableFoilRecipes;
-        @Config.Name("disableFineWireRecipes")
+        public boolean removeFoilRecipes;
+        @Config.Name("removeFineWireRecipes")
         @Config.RequiresMcRestart
-        public boolean disableFineWireRecipes;
+        public boolean removeFineWireRecipes;
     }
 
     public static class OtherStuff {
 
-        @Config.Comment({ "disable motors, pumps etc. recipes" })
-        @Config.Name("disableComponentRecipes")
+        @Config.Comment({ "Remove motors, pumps etc. recipes" })
+        @Config.Name("removeComponentRecipes")
         @Config.RequiresMcRestart
-        public boolean disableComponentRecipes;
+        public boolean removeComponentRecipes;
 
-        @Config.Comment({ "disable circuit assembler recipes using liquid tin" })
-        @Config.Name("disableTinCircuitRecipes")
+        @Config.Comment({ "Remove circuit assembler recipes using liquid tin" })
+        @Config.Name("removeTinCircuitRecipes")
         @Config.RequiresMcRestart
-        public boolean disableTinCircuitRecipes;
+        public boolean removeTinCircuitRecipes;
 
-        @Config.Comment({ "disable ulv to uhv casing shaped recipes" })
-        @Config.Name("disableTierCasingRecipes")
+        @Config.Comment({ "Remove ulv to uhv casing shaped recipes" })
+        @Config.Name("removeTierCasingRecipes")
         @Config.RequiresMcRestart
-        public boolean disableTierCasingRecipes;
+        public boolean removeTierCasingRecipes;
 
-        @Config.Comment({ "disable all electrolysis recipes including auto-generated recipes" })
-        @Config.Name("disableElectrolysisRecipes")
+        @Config.Comment({ "Remove all electrolysis recipes including auto-generated recipes" })
+        @Config.Name("removeElectrolysisRecipes")
         @Config.RequiresMcRestart
-        public boolean disableElectrolysisRecipes;
+        public boolean removeElectrolysisRecipes;
     }
 }
