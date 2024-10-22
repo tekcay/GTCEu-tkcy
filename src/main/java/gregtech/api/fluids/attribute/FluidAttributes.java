@@ -13,5 +13,12 @@ public final class FluidAttributes {
             list -> list.add(I18n.format("gregtech.fluid.type_acid.tooltip")),
             list -> list.add(I18n.format("gregtech.fluid_pipe.acid_proof")));
 
+    /**
+     * Attribute for basic fluids.
+     */
+    public static final FluidAttribute BASIC = new FluidAttribute(gregtechId("basic"),
+            list -> list.add(I18n.format("gregtech.fluid.type_basic.tooltip")),
+            list -> list.add(I18n.format("gregtech.fluid_pipe.basic_proof")));
+
     private FluidAttributes() {}
 }
