@@ -16,9 +16,9 @@ public final class FluidAttributes {
     /**
      * Attribute for basic fluids.
      */
-    public static final FluidAttribute BASIC = new FluidAttribute(gregtechId("basic"),
-            list -> list.add(I18n.format("gregtech.fluid.type_basic.tooltip")),
-            list -> list.add(I18n.format("gregtech.fluid_pipe.basic_proof")));
+    public static final FluidAttribute BASE = new FluidAttribute(gregtechId("base"),
+            list -> list.add(I18n.format("gregtech.fluid.type_base.tooltip")),
+            list -> list.add(I18n.format("gregtech.fluid_pipe.base_proof")));
 
     private FluidAttributes() {}
 }
