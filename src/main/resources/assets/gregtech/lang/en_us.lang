@@ -5449,6 +5449,7 @@ gregtech.fluid.state_liquid=§aState: Liquid
 gregtech.fluid.state_plasma=§aState: Plasma
 gregtech.fluid.type_acid.tooltip=§6Acidic! Handle with care!
 gregtech.fluid.type_basic.tooltip=§6Basic! Handle with care!
+gregtech.fluid.type_fluoride.tooltip=§6Fluoride! Handle with care!
 gregtech.gui.fuel_amount=Fuel Amount:
 gregtech.gui.fluid_amount=Fluid Amount:
 gregtech.gui.amount_raw=Amount:
