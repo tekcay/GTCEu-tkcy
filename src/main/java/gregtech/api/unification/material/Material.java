@@ -1073,6 +1073,11 @@ public class Material implements Comparable<Material> {
             return this;
         }
 
+        public Builder physicalProperties(PhysicalProperties physicalProperties) {
+            properties.setProperty(PropertyKey.PHYSICAL_PROPERTIES, physicalProperties);
+            return this;
+        }
+
         // TODO Clean this up post 2.5 release
         @Deprecated
         public Builder addDefaultEnchant(Enchantment enchant, int level) {
