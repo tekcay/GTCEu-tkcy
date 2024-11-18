@@ -434,6 +434,9 @@ public class Material implements Comparable<Material> {
     public boolean hasFluid() {
         return hasProperty(PropertyKey.FLUID);
     }
+    public PhysicalProperties getPhysicalProperties() {
+        return this.getProperties().getProperty(PropertyKey.PHYSICAL_PROPERTIES);
+    }
 
     public void verifyMaterial() {
         properties.verify();
@@ -1075,6 +1078,11 @@ public class Material implements Comparable<Material> {
 
         public Builder physicalProperties(PhysicalProperties physicalProperties) {
             properties.setProperty(PropertyKey.PHYSICAL_PROPERTIES, physicalProperties);
+            return this;
+        }
+
+        public Builder physicalProperties(PhysicalProperties.Builder builder) {
+            properties.setProperty(PropertyKey.PHYSICAL_PROPERTIES, builder.build());
             return this;
         }
 
