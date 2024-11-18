@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.function.Supplier;
 
 @Desugar
-public record PhysicalProperties(int bp, int mp, int flameTemperature, int thermalConductivity, boolean isPyrophoric, boolean isHygroscopic) implements IMaterialProperty {
+public record PhysicalProperties(int bp, int mp, int flameTemperature, int thermalConductivity, boolean isPyrophoric, boolean isHygroscopic, boolean oxidizes) implements IMaterialProperty {
 
     public static List<String> createPhysicalPropertiesTooltip(@NotNull Material material) {
         List<String> tooltips = new ArrayList<>();
@@ -24,6 +24,9 @@ public record PhysicalProperties(int bp, int mp, int flameTemperature, int therm
         if (material.hasProperty(PropertyKey.PHYSICAL_PROPERTIES)) {
             PhysicalProperties physicalProperties = material.getPhysicalProperties();
 
+            if (physicalProperties.isHygroscopic()) {
+                tooltips.add(I18n.format("gregtech.physical_properties.oxidizes"));
+            }
             if (physicalProperties.isHygroscopic()) {
                 tooltips.add(I18n.format("gregtech.physical_properties.hygroscopic"));
             }
@@ -51,6 +54,7 @@ public record PhysicalProperties(int bp, int mp, int flameTemperature, int therm
         private int flameTemperature = 0;
         private boolean isPyrophoric = false;
         private boolean isHygroscopic = false;
+        private boolean oxidizes = false;
 
         public Builder thermalConductivity(int thermalConductivity) {
             this.thermalConductivity = thermalConductivity;
@@ -85,8 +89,13 @@ public record PhysicalProperties(int bp, int mp, int flameTemperature, int therm
             return this;
         }
 
+        public Builder oxidizes() {
+            this.oxidizes = true;
+            return this;
+        }
+
         public PhysicalProperties build() {
-            return new PhysicalProperties(bp, mp, flameTemperature, thermalConductivity, isPyrophoric, isHygroscopic);
+            return new PhysicalProperties(bp, mp, flameTemperature, thermalConductivity, isPyrophoric, isHygroscopic, oxidizes);
         }
     }
 

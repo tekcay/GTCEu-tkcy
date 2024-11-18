@@ -5452,6 +5452,7 @@ gregtech.fluid.type_base.tooltip=§6Basic! Handle with care!
 gregtech.fluid.type_fluoride.tooltip=§6Fluoride! Handle with care!
 
 gregtech.physical_properties.hygroscopic=§5Hygroscopic, absorbs air moisture!
+gregtech.physical_properties.oxidizes=§6Oxidizes in air!
 gregtech.physical_properties.pyrophoric=§cPyrophoric! Ignites spontaneously on exposure to air!
 gregtech.physical_properties.thermal_conductivity=§dThermal Conductivity: §f%d W/Km
 gregtech.physical_properties.mp=§emp: §f%d K
