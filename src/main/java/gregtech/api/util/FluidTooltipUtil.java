@@ -4,6 +4,9 @@ import gregtech.api.fluids.FluidState;
 import gregtech.api.fluids.GTFluid;
 import gregtech.api.unification.material.Material;
 
+import gregtech.api.unification.material.properties.PhysicalProperties;
+import gregtech.api.unification.material.properties.PropertyKey;
+
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.fluids.Fluid;
@@ -97,7 +100,12 @@ public class FluidTooltipUtil {
                 tooltip.add(TextFormatting.YELLOW + material.getChemicalFormula());
             }
 
+            if (material != null) {
+                tooltip.addAll(PhysicalProperties.createPhysicalPropertiesTooltip(material));
+            }
+
             tooltip.add(I18n.format("gregtech.fluid.temperature", fluid.getTemperature()));
+
             tooltip.add(I18n.format(fluidState.getTranslationKey()));
             if (fluid instanceof GTFluid gtFluid) {
                 gtFluid.getAttributes().forEach(a -> a.appendFluidTooltips(tooltip));

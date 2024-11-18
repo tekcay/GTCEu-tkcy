@@ -5450,6 +5450,14 @@ gregtech.fluid.state_plasma=§aState: Plasma
 gregtech.fluid.type_acid.tooltip=§6Acidic! Handle with care!
 gregtech.fluid.type_base.tooltip=§6Basic! Handle with care!
 gregtech.fluid.type_fluoride.tooltip=§6Fluoride! Handle with care!
+
+gregtech.physical_properties.hygroscopic=§5Hygroscopic, absorbs air moisture!
+gregtech.physical_properties.pyrophoric=§cPyrophoric! Ignites spontaneously on exposure to air!
+gregtech.physical_properties.thermal_conductivity=§dThermal Conductivity: §f%d W/Km
+gregtech.physical_properties.mp=§emp: §f%d K
+gregtech.physical_properties.bp=§ebp: §f%d K
+gregtech.physical_properties.flame_temperature=§6Flame Temperature: %d K
+
 gregtech.gui.fuel_amount=Fuel Amount:
 gregtech.gui.fluid_amount=Fluid Amount:
 gregtech.gui.amount_raw=Amount:

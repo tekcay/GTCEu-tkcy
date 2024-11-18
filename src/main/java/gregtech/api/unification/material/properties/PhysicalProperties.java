@@ -3,8 +3,45 @@ package gregtech.api.unification.material.properties;
 import com.github.bsideup.jabel.Desugar;
 import com.google.common.base.Preconditions;
 
+import gregtech.api.unification.material.Material;
+
+import net.minecraft.client.resources.I18n;
+
+import net.minecraft.util.text.TextFormatting;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Supplier;
+
 @Desugar
 public record PhysicalProperties(int bp, int mp, int flameTemperature, int thermalConductivity, boolean isPyrophoric, boolean isHygroscopic) implements IMaterialProperty {
+
+    public static List<String> createPhysicalPropertiesTooltip(@NotNull Material material) {
+        List<String> tooltips = new ArrayList<>();
+
+        if (material.hasProperty(PropertyKey.PHYSICAL_PROPERTIES)) {
+            PhysicalProperties physicalProperties = material.getPhysicalProperties();
+
+            if (physicalProperties.isHygroscopic()) {
+                tooltips.add(I18n.format("gregtech.physical_properties.hygroscopic"));
+            }
+            if (physicalProperties.isPyrophoric()) {
+                tooltips.add(I18n.format("gregtech.physical_properties.pyrophoric"));
+            }
+            if (physicalProperties.mp() > 0) {
+                tooltips.add(I18n.format("gregtech.physical_properties.mp", physicalProperties.mp()));
+            }
+            if (physicalProperties.bp() > 0) {
+                tooltips.add(I18n.format("gregtech.physical_properties.bp", physicalProperties.bp()));
+            }
+            if (physicalProperties.thermalConductivity() > 0) {
+                tooltips.add(I18n.format("gregtech.physical_properties.thermal_conductivity", physicalProperties.thermalConductivity()));
+            }
+        }
+        return tooltips;
+    }
 
     public static class Builder {
 
