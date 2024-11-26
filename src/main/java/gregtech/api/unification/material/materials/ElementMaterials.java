@@ -312,7 +312,6 @@ public class ElementMaterials {
         Gallium = new Material.Builder(39, gregtechId("gallium"))
                 .ingot().fluid()
                 .physicalProperties(new PhysicalProperties.Builder().thermalConductivity(41).mp(303).bp(2676).oxidizes())
-                .liquid(new FluidBuilder().temperature(303))
                 .color(0xDCDCFF).iconSet(SHINY)
                 .flags(STD_METAL, GENERATE_FOIL)
                 .element(Elements.Ga)
@@ -687,7 +686,6 @@ public class ElementMaterials {
                 .dust(1)
                 .fluid()
                 .physicalProperties(new PhysicalProperties.Builder().thermalConductivity(103).mp(337).bp(1031).pyrophoric())
-                .liquid(new FluidBuilder().temperature(337))
                 .color(0xBEDCFF).iconSet(METALLIC)
                 .element(Elements.K)
                 .build();
@@ -992,6 +990,7 @@ public class ElementMaterials {
                 .build();
 
         Ytterbium = new Material.Builder(120, gregtechId("ytterbium"))
+                .ingot().fluid()
                 .color(0xA7A7A7).iconSet(METALLIC)
                 .physicalProperties(new PhysicalProperties.Builder().thermalConductivity(38).oxidizes())
                 .element(Elements.Yb)

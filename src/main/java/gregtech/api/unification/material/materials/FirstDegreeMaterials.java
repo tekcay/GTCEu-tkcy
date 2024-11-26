@@ -1562,7 +1562,7 @@ public class FirstDegreeMaterials {
                 .physicalProperties(new PhysicalProperties.Builder()
                         .mp(565)
                         .bp(649)
-                        .hygroscopic())
+                        .hygroscopic() )
                 .color(0xF7EABC).iconSet(METALLIC)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Antimony, 1, Fluorine, 3)
