@@ -119,7 +119,7 @@ public record PhysicalProperties(int bp, int bpPressure, int mp, int flameTemper
         }
 
         public PhysicalProperties build() {
-            return new PhysicalProperties(bp, bpPressure, mp, flameTemperature, autoIgnitionTemperature, thermalConductivity, isPyrophoric, isHygroscopic, oxidizes);
+            return new PhysicalProperties(bp, bpPressure, mp, flameTemperature, thermalConductivity, autoIgnitionTemperature, isPyrophoric, isHygroscopic, oxidizes);
         }
     }
 

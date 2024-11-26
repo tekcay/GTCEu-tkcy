@@ -598,6 +598,24 @@ public class Material implements Comparable<Material> {
         }
 
         /**
+         * Add a distilled fluid for this material.
+         *
+         * @see #fluid(FluidStorageKey, FluidState)
+         */
+        public Builder distilledFluid() {
+            return fluid(FluidStorageKeys.DISTILLED_LIQUID, FluidState.LIQUID);
+        }
+
+        /**
+         * Add a distilled fluid for this material.
+         *
+         * @see #fluid(FluidStorageKey, FluidState)
+         */
+        public Builder distilledFluid(@NotNull FluidBuilder builder) {
+            return fluid(FluidStorageKeys.DISTILLED_LIQUID, builder.state(FluidState.LIQUID));
+        }
+
+        /**
          * Add a {@link DustProperty} to this Material.<br>
          * Will be created with a Harvest Level of 2 and no Burn Time (Furnace Fuel).
          *

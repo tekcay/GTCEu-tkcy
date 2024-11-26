@@ -27,6 +27,7 @@ public class OrganicChemistryMaterials {
 
         Nitrobenzene = new Material.Builder(1001, gregtechId("nitrobenzene"))
                 .fluid()
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().bp(484).mp(279))
                 .color(0x704936)
                 .flags(DISABLE_DECOMPOSITION)
@@ -164,6 +165,7 @@ public class OrganicChemistryMaterials {
 
         Epichlorohydrin = new Material.Builder(1019, gregtechId("epichlorohydrin"))
                 .liquid(new FluidBuilder().customStill())
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().mp(247).bp(391))
                 .color(0x640C04)
                 .components(Carbon, 3, Hydrogen, 5, Chlorine, 1, Oxygen, 1)
@@ -178,6 +180,7 @@ public class OrganicChemistryMaterials {
 
         Chloroform = new Material.Builder(1021, gregtechId("chloroform"))
                 .fluid()
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().mp(210).bp(334))
                 .color(0x892CA0)
                 .components(Carbon, 1, Hydrogen, 1, Chlorine, 3)
@@ -185,6 +188,7 @@ public class OrganicChemistryMaterials {
 
         Cumene = new Material.Builder(1022, gregtechId("cumene"))
                 .fluid()
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().mp(177).bp(425).autoIgnitionTemperature(697))
                 .color(0x552200)
                 .flags(DISABLE_DECOMPOSITION)
@@ -208,6 +212,7 @@ public class OrganicChemistryMaterials {
 
         AllylChloride = new Material.Builder(1025, gregtechId("allyl_chloride"))
                 .fluid()
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().mp(138).bp(318).autoIgnitionTemperature(663))
                 .color(0x87DEAA)
                 .components(Carbon, 2, Methane, 1, HydrochloricAcid, 1)
@@ -216,6 +221,7 @@ public class OrganicChemistryMaterials {
 
         Isoprene = new Material.Builder(1026, gregtechId("isoprene"))
                 .fluid()
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().bp(307).mp(129))
                 .color(0x141414)
                 .components(Carbon, 5, Hydrogen, 8)
@@ -270,6 +276,7 @@ public class OrganicChemistryMaterials {
 
         VinylAcetate = new Material.Builder(1033, gregtechId("vinyl_acetate"))
                 .fluid()
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().bp(346).mp(180).autoIgnitionTemperature(700).flameTemperature(2200))
                 .color(0xE1B380)
                 .flags(DISABLE_DECOMPOSITION)
@@ -278,6 +285,7 @@ public class OrganicChemistryMaterials {
 
         MethylAcetate = new Material.Builder(1034, gregtechId("methyl_acetate"))
                 .fluid()
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().bp(330).mp(175))
                 .color(0xEEC6AF)
                 .flags(DISABLE_DECOMPOSITION)
@@ -293,6 +301,7 @@ public class OrganicChemistryMaterials {
 
         Tetranitromethane = new Material.Builder(1036, gregtechId("tetranitromethane"))
                 .fluid()
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().bp(399).mp(287).flameTemperature(3780).autoIgnitionTemperature(533))
                 .color(0x0F2828)
                 .flags(DISABLE_DECOMPOSITION)
@@ -309,6 +318,7 @@ public class OrganicChemistryMaterials {
 
         Dimethylhydrazine = new Material.Builder(1038, gregtechId("dimethylhydrazine"))
                 .fluid()
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().bp(337).mp(216).autoIgnitionTemperature(521).flameTemperature(2700))
                 .color(0x000055)
                 .flags(DISABLE_DECOMPOSITION)
@@ -324,6 +334,7 @@ public class OrganicChemistryMaterials {
 
         Dimethyldichlorosilane = new Material.Builder(1040, gregtechId("dimethyldichlorosilane"))
                 .liquid()
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().mp(197).bp(343).autoIgnitionTemperature(690).flameTemperature(2280))
                 .color(0x441650)
                 .flags(DISABLE_DECOMPOSITION)
@@ -333,6 +344,7 @@ public class OrganicChemistryMaterials {
 
         Styrene = new Material.Builder(1041, gregtechId("styrene"))
                 .fluid()
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().bp(418).mp(243))
                 .color(0xD2C8BE)
                 .flags(DISABLE_DECOMPOSITION)
@@ -396,6 +408,7 @@ public class OrganicChemistryMaterials {
 
         Benzene = new Material.Builder(1049, gregtechId("benzene"))
                 .fluid()
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().autoIgnitionTemperature(771).bp(353).mp(279).flameTemperature(2250))
                 .color(0x1A1A1A)
                 .flags(DISABLE_DECOMPOSITION)
@@ -404,6 +417,7 @@ public class OrganicChemistryMaterials {
 
         Acetone = new Material.Builder(1050, gregtechId("acetone"))
                 .fluid()
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().autoIgnitionTemperature(738).bp(329).mp(178).flameTemperature(2250))
                 .color(0xAFAFAF)
                 .components(Carbon, 3, Hydrogen, 6, Oxygen, 1)
@@ -418,6 +432,7 @@ public class OrganicChemistryMaterials {
 
         Methanol = new Material.Builder(1052, gregtechId("methanol"))
                 .fluid()
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().autoIgnitionTemperature(658).bp(338).mp(176).flameTemperature(2150))
                 .color(0xAA8800)
                 .components(Carbon, 1, Hydrogen, 4, Oxygen, 1)
@@ -427,6 +442,7 @@ public class OrganicChemistryMaterials {
 
         Ethanol = new Material.Builder(1054, gregtechId("ethanol"))
                 .liquid(new FluidBuilder().customStill().alternativeName("bio.ethanol"))
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().bp(351).mp(159).autoIgnitionTemperature(642).flameTemperature(2250))
                 .color(0xFC4C04)
                 .flags(DISABLE_DECOMPOSITION)
@@ -435,6 +451,7 @@ public class OrganicChemistryMaterials {
 
         Toluene = new Material.Builder(1055, gregtechId("toluene"))
                 .liquid(new FluidBuilder().customStill())
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().autoIgnitionTemperature(753).bp(384).mp(178).flameTemperature(2300))
                 .color(0x712400)
                 .flags(DISABLE_DECOMPOSITION)
@@ -492,6 +509,7 @@ public class OrganicChemistryMaterials {
 
         Chlorobenzene = new Material.Builder(1062, gregtechId("chlorobenzene"))
                 .fluid()
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().mp(228).bp(405).autoIgnitionTemperature(813).flameTemperature(2220))
                 .color(0x326A3E)
                 .flags(DISABLE_DECOMPOSITION)
@@ -500,6 +518,7 @@ public class OrganicChemistryMaterials {
 
         Octane = new Material.Builder(1063, gregtechId("octane"))
                 .fluid()
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().flameTemperature(2420).autoIgnitionTemperature(493).bp(398).mp(216))
                 .flags(DISABLE_DECOMPOSITION)
                 .color(0x8A0A09)
@@ -508,6 +527,7 @@ public class OrganicChemistryMaterials {
 
         EthylTertButylEther = new Material.Builder(1064, gregtechId("ethyl_tertbutyl_ether"))
                 .fluid()
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().mp(179).bp(344).autoIgnitionTemperature(648).flameTemperature(2220))
                 .flags(DISABLE_DECOMPOSITION)
                 .color(0xB15C06)
@@ -516,6 +536,7 @@ public class OrganicChemistryMaterials {
 
         Ethylbenzene = new Material.Builder(1066, gregtechId("ethylbenzene"))
                 .fluid()
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().autoIgnitionTemperature(703).bp(409).mp(178).flameTemperature(2220))
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 8, Hydrogen, 10)
@@ -523,6 +544,7 @@ public class OrganicChemistryMaterials {
 
         Naphthalene = new Material.Builder(1067, gregtechId("naphthalene"))
                 .fluid()
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().autoIgnitionTemperature(798).mp(351).bp(491).flameTemperature(2220))
                 .flags(DISABLE_DECOMPOSITION)
                 .color(0xF4F4D7)
@@ -539,6 +561,7 @@ public class OrganicChemistryMaterials {
 
         Cyclohexane = new Material.Builder(1069, gregtechId("cyclohexane"))
                 .fluid()
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().autoIgnitionTemperature(518).bp(354).mp(280).flameTemperature(2220))
                 .color(0xF2F2F2E7)
                 .components(Carbon, 6, Hydrogen, 12)
@@ -570,6 +593,7 @@ public class OrganicChemistryMaterials {
 
         Butyraldehyde = new Material.Builder(1073, gregtechId("butyraldehyde"))
                 .fluid()
+                .distilledFluid()
                 .physicalProperties(new PhysicalProperties.Builder().autoIgnitionTemperature(503).bp(348).mp(176).flameTemperature(2120))
                 .color(0x554A3F)
                 .flags(DISABLE_DECOMPOSITION)
