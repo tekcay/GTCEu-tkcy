@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.function.Supplier;
 
 @Desugar
-public record PhysicalProperties(int bp, int mp, int flameTemperature, int thermalConductivity, boolean isPyrophoric, boolean isHygroscopic, boolean oxidizes) implements IMaterialProperty {
+public record PhysicalProperties(int bp, int bpPressure, int mp, int flameTemperature, int thermalConductivity, int autoIgnitionTemperature, boolean isPyrophoric, boolean isHygroscopic, boolean oxidizes) implements IMaterialProperty {
 
     public static List<String> createPhysicalPropertiesTooltip(@NotNull Material material) {
         List<String> tooltips = new ArrayList<>();
@@ -37,7 +37,15 @@ public record PhysicalProperties(int bp, int mp, int flameTemperature, int therm
                 tooltips.add(I18n.format("gregtech.physical_properties.mp", physicalProperties.mp()));
             }
             if (physicalProperties.bp() > 0) {
-                tooltips.add(I18n.format("gregtech.physical_properties.bp", physicalProperties.bp()));
+                if (physicalProperties.bpPressure() > 0) {
+                    tooltips.add(I18n.format("gregtech.physical_properties.bp_pressure", physicalProperties.bp(), physicalProperties.bpPressure()));
+                } else tooltips.add(I18n.format("gregtech.physical_properties.bp", physicalProperties.bp()));
+            }
+            if (physicalProperties.flameTemperature() > 0) {
+                tooltips.add(I18n.format("gregtech.physical_properties.flame_temperature", physicalProperties.flameTemperature()));
+            }
+            if (physicalProperties.autoIgnitionTemperature() > 0) {
+                tooltips.add(I18n.format("gregtech.physical_properties.auto_ignition_temperature", physicalProperties.autoIgnitionTemperature()));
             }
             if (physicalProperties.thermalConductivity() > 0) {
                 tooltips.add(I18n.format("gregtech.physical_properties.thermal_conductivity", physicalProperties.thermalConductivity()));
@@ -51,7 +59,9 @@ public record PhysicalProperties(int bp, int mp, int flameTemperature, int therm
         private int thermalConductivity = 0;
         private int bp = 0;
         private int mp = 0;
+        private int bpPressure = 0;
         private int flameTemperature = 0;
+        private int autoIgnitionTemperature = 0;
         private boolean isPyrophoric = false;
         private boolean isHygroscopic = false;
         private boolean oxidizes = false;
@@ -67,6 +77,14 @@ public record PhysicalProperties(int bp, int mp, int flameTemperature, int therm
             return this;
         }
 
+        public Builder bp(int boilingPoint, int boilingPressure) {
+            Preconditions.checkArgument(boilingPoint > 0, "Boiling point must be > 0");
+            Preconditions.checkArgument(boilingPressure > 0, "Boiling pressure must be > 0");
+            this.bp = boilingPoint;
+            this.bpPressure = boilingPressure;
+            return this;
+        }
+
         public Builder mp(int meltingPoint) {
             Preconditions.checkArgument(meltingPoint > 0, "Melting point must be > 0");
             this.mp = meltingPoint;
@@ -76,6 +94,12 @@ public record PhysicalProperties(int bp, int mp, int flameTemperature, int therm
         public Builder flameTemperature(int flameTemperature) {
             Preconditions.checkArgument(flameTemperature > 0, "flameTemperature must be > 0");
             this.flameTemperature = flameTemperature;
+            return this;
+        }
+
+        public Builder autoIgnitionTemperature(int autoIgnitionTemperature) {
+            Preconditions.checkArgument(autoIgnitionTemperature > 0, "autoIgnitionTemperature must be > 0");
+            this.autoIgnitionTemperature = autoIgnitionTemperature;
             return this;
         }
 
@@ -95,7 +119,7 @@ public record PhysicalProperties(int bp, int mp, int flameTemperature, int therm
         }
 
         public PhysicalProperties build() {
-            return new PhysicalProperties(bp, mp, flameTemperature, thermalConductivity, isPyrophoric, isHygroscopic, oxidizes);
+            return new PhysicalProperties(bp, bpPressure, mp, flameTemperature, autoIgnitionTemperature, thermalConductivity, isPyrophoric, isHygroscopic, oxidizes);
         }
     }
 
