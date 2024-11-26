@@ -3,9 +3,7 @@ package gregtech.api.util;
 import gregtech.api.fluids.FluidState;
 import gregtech.api.fluids.GTFluid;
 import gregtech.api.unification.material.Material;
-
 import gregtech.api.unification.material.properties.PhysicalProperties;
-import gregtech.api.unification.material.properties.PropertyKey;
 
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.text.TextFormatting;

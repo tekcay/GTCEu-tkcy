@@ -434,6 +434,7 @@ public class Material implements Comparable<Material> {
     public boolean hasFluid() {
         return hasProperty(PropertyKey.FLUID);
     }
+
     public PhysicalProperties getPhysicalProperties() {
         return this.getProperties().getProperty(PropertyKey.PHYSICAL_PROPERTIES);
     }

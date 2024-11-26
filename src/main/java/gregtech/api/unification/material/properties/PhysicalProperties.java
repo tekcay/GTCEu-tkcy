@@ -1,22 +1,21 @@
 package gregtech.api.unification.material.properties;
 
-import com.github.bsideup.jabel.Desugar;
-import com.google.common.base.Preconditions;
-
 import gregtech.api.unification.material.Material;
 
 import net.minecraft.client.resources.I18n;
 
-import net.minecraft.util.text.TextFormatting;
-
+import com.github.bsideup.jabel.Desugar;
+import com.google.common.base.Preconditions;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Supplier;
 
 @Desugar
-public record PhysicalProperties(int bp, int bpPressure, int mp, int flameTemperature, int thermalConductivity, int autoIgnitionTemperature, boolean isPyrophoric, boolean isHygroscopic, boolean oxidizes) implements IMaterialProperty {
+public record PhysicalProperties(int bp, int bpPressure, int mp, int flameTemperature, int thermalConductivity,
+                                 int autoIgnitionTemperature, boolean isPyrophoric, boolean isHygroscopic,
+                                 boolean oxidizes)
+        implements IMaterialProperty {
 
     public static List<String> createPhysicalPropertiesTooltip(@NotNull Material material) {
         List<String> tooltips = new ArrayList<>();
@@ -38,17 +37,21 @@ public record PhysicalProperties(int bp, int bpPressure, int mp, int flameTemper
             }
             if (physicalProperties.bp() > 0) {
                 if (physicalProperties.bpPressure() > 0) {
-                    tooltips.add(I18n.format("gregtech.physical_properties.bp_pressure", physicalProperties.bp(), physicalProperties.bpPressure()));
+                    tooltips.add(I18n.format("gregtech.physical_properties.bp_pressure", physicalProperties.bp(),
+                            physicalProperties.bpPressure()));
                 } else tooltips.add(I18n.format("gregtech.physical_properties.bp", physicalProperties.bp()));
             }
             if (physicalProperties.flameTemperature() > 0) {
-                tooltips.add(I18n.format("gregtech.physical_properties.flame_temperature", physicalProperties.flameTemperature()));
+                tooltips.add(I18n.format("gregtech.physical_properties.flame_temperature",
+                        physicalProperties.flameTemperature()));
             }
             if (physicalProperties.autoIgnitionTemperature() > 0) {
-                tooltips.add(I18n.format("gregtech.physical_properties.auto_ignition_temperature", physicalProperties.autoIgnitionTemperature()));
+                tooltips.add(I18n.format("gregtech.physical_properties.auto_ignition_temperature",
+                        physicalProperties.autoIgnitionTemperature()));
             }
             if (physicalProperties.thermalConductivity() > 0) {
-                tooltips.add(I18n.format("gregtech.physical_properties.thermal_conductivity", physicalProperties.thermalConductivity()));
+                tooltips.add(I18n.format("gregtech.physical_properties.thermal_conductivity",
+                        physicalProperties.thermalConductivity()));
             }
         }
         return tooltips;
@@ -119,7 +122,8 @@ public record PhysicalProperties(int bp, int bpPressure, int mp, int flameTemper
         }
 
         public PhysicalProperties build() {
-            return new PhysicalProperties(bp, bpPressure, mp, flameTemperature, thermalConductivity, autoIgnitionTemperature, isPyrophoric, isHygroscopic, oxidizes);
+            return new PhysicalProperties(bp, bpPressure, mp, flameTemperature, thermalConductivity,
+                    autoIgnitionTemperature, isPyrophoric, isHygroscopic, oxidizes);
         }
     }
 
