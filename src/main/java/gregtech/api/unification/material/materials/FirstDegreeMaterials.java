@@ -7,7 +7,6 @@ import gregtech.api.fluids.attribute.FluidAttributes;
 import gregtech.api.fluids.store.FluidStorageKeys;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty.GasTier;
-import gregtech.api.unification.material.properties.PhysicalProperties;
 import gregtech.api.unification.material.properties.PropertyKey;
 import gregtech.api.unification.material.properties.ToolProperty;
 
@@ -1217,26 +1216,19 @@ public class FirstDegreeMaterials {
                 .build();
 
         Ammonia = new Material.Builder(408, gregtechId("ammonia"))
-                .liquid(new FluidBuilder().attributes(FluidAttributes.BASE).state(FluidState.GAS))
-                .physicalProperties(new PhysicalProperties.Builder()
-                        .mp(195)
-                        .bp(240)
-                        .hygroscopic())
+                .gas()
                 .color(0x3F3480)
                 .components(Nitrogen, 1, Hydrogen, 3)
                 .build();
 
         HydrofluoricAcid = new Material.Builder(409, gregtechId("hydrofluoric_acid"))
-                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID, FluidAttributes.FLUORIDE))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
                 .color(0x0088AA)
                 .components(Hydrogen, 1, Fluorine, 1)
                 .build();
 
         NitricOxide = new Material.Builder(410, gregtechId("nitric_oxide"))
                 .gas()
-                .physicalProperties(new PhysicalProperties.Builder()
-                        .mp(109)
-                        .bp(121))
                 .color(0x7DC8F0)
                 .components(Nitrogen, 1, Oxygen, 1)
                 .build();
@@ -1327,10 +1319,6 @@ public class FirstDegreeMaterials {
 
         SodiumPotassium = new Material.Builder(422, gregtechId("sodium_potassium"))
                 .fluid()
-                .physicalProperties(new PhysicalProperties.Builder()
-                        .mp(261)
-                        .pyrophoric()
-                        .thermalConductivity(22))
                 .color(0x64FCB4)
                 .flags(DECOMPOSITION_BY_CENTRIFUGING)
                 .components(Sodium, 1, Potassium, 1)
@@ -1500,7 +1488,7 @@ public class FirstDegreeMaterials {
 
         FluoroantimonicAcid = new Material.Builder(438, gregtechId("fluoroantimonic_acid"))
                 .liquid(new FluidBuilder()
-                        .attributes(FluidAttributes.ACID, FluidAttributes.FLUORIDE)
+                        .attribute(FluidAttributes.ACID)
                         .customStill())
                 .color(0x8CA4C4)
                 .components(Hydrogen, 2, Antimony, 1, Fluorine, 7)
@@ -1508,11 +1496,6 @@ public class FirstDegreeMaterials {
 
         TitaniumTrifluoride = new Material.Builder(439, gregtechId("titanium_trifluoride"))
                 .dust()
-                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID, FluidAttributes.FLUORIDE).temperature(1470))
-                .physicalProperties(new PhysicalProperties.Builder()
-                        .hygroscopic()
-                        .mp(1470)
-                        .bp(1670))
                 .color(0x8F00FF).iconSet(SHINY)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Titanium, 1, Fluorine, 3)
@@ -1558,11 +1541,6 @@ public class FirstDegreeMaterials {
 
         AntimonyTrifluoride = new Material.Builder(446, gregtechId("antimony_trifluoride"))
                 .dust()
-                .liquid(new FluidBuilder().attributes(FluidAttributes.FLUORIDE))
-                .physicalProperties(new PhysicalProperties.Builder()
-                        .mp(565)
-                        .bp(649)
-                        .hygroscopic())
                 .color(0xF7EABC).iconSet(METALLIC)
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Antimony, 1, Fluorine, 3)

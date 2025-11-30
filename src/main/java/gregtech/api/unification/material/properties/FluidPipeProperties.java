@@ -27,12 +27,7 @@ public class FluidPipeProperties implements IMaterialProperty, IPropertyFluidFil
 
     public FluidPipeProperties(int maxFluidTemperature, int throughput, boolean gasProof, boolean acidProof,
                                boolean cryoProof, boolean plasmaProof) {
-        this(maxFluidTemperature, throughput, gasProof, acidProof, cryoProof, plasmaProof, false, false, 1);
-    }
-
-    public FluidPipeProperties(int maxFluidTemperature, int throughput, boolean gasProof, boolean acidProof,
-                               boolean cryoProof, boolean plasmaProof, boolean baseProof, boolean fluorideProof) {
-        this(maxFluidTemperature, throughput, gasProof, acidProof, cryoProof, plasmaProof, baseProof, fluorideProof, 1);
+        this(maxFluidTemperature, throughput, gasProof, acidProof, cryoProof, plasmaProof, 1);
     }
 
     /**
@@ -40,8 +35,7 @@ public class FluidPipeProperties implements IMaterialProperty, IPropertyFluidFil
      * {@link gregtech.common.pipelike.fluidpipe.FluidPipeType#modifyProperties(FluidPipeProperties)}
      */
     public FluidPipeProperties(int maxFluidTemperature, int throughput, boolean gasProof, boolean acidProof,
-                               boolean cryoProof, boolean plasmaProof, boolean baseProof, boolean fluorideProof,
-                               int tanks) {
+                               boolean cryoProof, boolean plasmaProof, int tanks) {
         this.maxFluidTemperature = maxFluidTemperature;
         this.throughput = throughput;
         this.gasProof = gasProof;
@@ -49,8 +43,6 @@ public class FluidPipeProperties implements IMaterialProperty, IPropertyFluidFil
         this.cryoProof = cryoProof;
         this.plasmaProof = plasmaProof;
         this.tanks = tanks;
-        if (baseProof) setCanContain(FluidAttributes.BASE, true);
-        if (fluorideProof) setCanContain(FluidAttributes.FLUORIDE, true);
     }
 
     /**
@@ -128,14 +120,6 @@ public class FluidPipeProperties implements IMaterialProperty, IPropertyFluidFil
 
     public boolean isAcidProof() {
         return canContain(FluidAttributes.ACID);
-    }
-
-    public boolean isBaseProof() {
-        return canContain(FluidAttributes.BASE);
-    }
-
-    public boolean isFluorideProof() {
-        return canContain(FluidAttributes.FLUORIDE);
     }
 
     public boolean isCryoProof() {

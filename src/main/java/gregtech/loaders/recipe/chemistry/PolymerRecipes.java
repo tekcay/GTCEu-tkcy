@@ -359,18 +359,18 @@ public class PolymerRecipes {
 
     private static void polybenzimidazoleProcess() {
         CHEMICAL_RECIPES.recipeBuilder().EUt(VA[IV]).duration(100)
-                .input(dust, Diaminobenzidine)
-                .input(dust, DiphenylIsophtalate)
+                .fluidInputs(Diaminobenzidine.getFluid(1000))
+                .fluidInputs(DiphenylIsophtalate.getFluid(1000))
                 .fluidOutputs(Phenol.getFluid(1000))
                 .fluidOutputs(Polybenzimidazole.getFluid(1008))
                 .buildAndRegister();
 
         // 3,3-Diaminobenzidine
         LARGE_CHEMICAL_RECIPES.recipeBuilder().EUt(VA[IV]).duration(100)
-                .input(dust, Dichlorobenzidine)
+                .fluidInputs(Dichlorobenzidine.getFluid(1000))
                 .fluidInputs(Ammonia.getFluid(2000))
                 .notConsumable(dust, Zinc)
-                .output(dust, Diaminobenzidine)
+                .fluidOutputs(Diaminobenzidine.getFluid(1000))
                 .fluidOutputs(HydrochloricAcid.getFluid(2000))
                 .buildAndRegister();
 
@@ -378,14 +378,14 @@ public class PolymerRecipes {
                 .input(dustTiny, Copper)
                 .fluidInputs(Nitrochlorobenzene.getFluid(2000))
                 .fluidInputs(Hydrogen.getFluid(2000))
-                .output(dust, Dichlorobenzidine)
+                .fluidOutputs(Dichlorobenzidine.getFluid(1000))
                 .buildAndRegister();
 
         LARGE_CHEMICAL_RECIPES.recipeBuilder().EUt(VA[EV]).duration(1800)
                 .input(dust, Copper)
                 .fluidInputs(Nitrochlorobenzene.getFluid(18000))
                 .fluidInputs(Hydrogen.getFluid(18000))
-                .output(dust, Dichlorobenzidine, 9)
+                .fluidOutputs(Dichlorobenzidine.getFluid(9000))
                 .buildAndRegister();
 
         CHEMICAL_RECIPES.recipeBuilder().EUt(VA[HV]).duration(100)
@@ -407,8 +407,8 @@ public class PolymerRecipes {
         LARGE_CHEMICAL_RECIPES.recipeBuilder().EUt(VA[IV]).duration(100)
                 .fluidInputs(Phenol.getFluid(2000))
                 .fluidInputs(SulfuricAcid.getFluid(1000))
-                .input(dust, PhthalicAcid)
-                .output(dust, DiphenylIsophtalate)
+                .fluidInputs(PhthalicAcid.getFluid(1000))
+                .fluidOutputs(DiphenylIsophtalate.getFluid(1000))
                 .fluidOutputs(DilutedSulfuricAcid.getFluid(1000))
                 .buildAndRegister();
 
@@ -416,7 +416,7 @@ public class PolymerRecipes {
                 .input(dustTiny, PotassiumDichromate)
                 .fluidInputs(Dimethylbenzene.getFluid(1000))
                 .fluidInputs(Oxygen.getFluid(2000))
-                .output(dust, PhthalicAcid)
+                .fluidOutputs(PhthalicAcid.getFluid(1000))
                 .fluidOutputs(Water.getFluid(2000))
                 .buildAndRegister();
 
@@ -424,24 +424,24 @@ public class PolymerRecipes {
                 .input(dust, PotassiumDichromate)
                 .fluidInputs(Dimethylbenzene.getFluid(9000))
                 .fluidInputs(Oxygen.getFluid(18000))
-                .output(dust, PhthalicAcid, 9)
+                .fluidOutputs(PhthalicAcid.getFluid(9000))
                 .fluidOutputs(Water.getFluid(18000))
                 .buildAndRegister();
 
-        LARGE_CHEMICAL_RECIPES.recipeBuilder().EUt(VA[LV]).duration(250)
-                .fluidInputs(Naphthalene.getFluid(4000))
-                .fluidInputs(SulfuricAcid.getFluid(2000))
+        LARGE_CHEMICAL_RECIPES.recipeBuilder().EUt(VA[LV]).duration(125)
+                .fluidInputs(Naphthalene.getFluid(2000))
+                .fluidInputs(SulfuricAcid.getFluid(1000))
                 .input(dustTiny, Potassium)
-                .output(dust, PhthalicAcid, 5)
-                .fluidOutputs(HydrogenSulfide.getFluid(2000))
+                .fluidOutputs(PhthalicAcid.getFluid(2500))
+                .fluidOutputs(HydrogenSulfide.getFluid(1000))
                 .buildAndRegister();
 
-        LARGE_CHEMICAL_RECIPES.recipeBuilder().EUt(VA[LV]).duration(2250)
-                .fluidInputs(Naphthalene.getFluid(36000))
-                .fluidInputs(SulfuricAcid.getFluid(18000))
+        LARGE_CHEMICAL_RECIPES.recipeBuilder().EUt(VA[LV]).duration(1125)
+                .fluidInputs(Naphthalene.getFluid(18000))
+                .fluidInputs(SulfuricAcid.getFluid(9000))
                 .input(dust, Potassium)
-                .output(dust, PhthalicAcid, 45)
-                .fluidOutputs(HydrogenSulfide.getFluid(18000))
+                .fluidOutputs(PhthalicAcid.getFluid(22500))
+                .fluidOutputs(HydrogenSulfide.getFluid(9000))
                 .buildAndRegister();
 
         LARGE_CHEMICAL_RECIPES.recipeBuilder().EUt(VA[MV]).duration(4000)

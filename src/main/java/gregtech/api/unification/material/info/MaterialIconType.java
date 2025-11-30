@@ -87,7 +87,6 @@ public class MaterialIconType {
 
     // BLOCK TEXTURES
     public static final MaterialIconType liquid = new MaterialIconType("liquid");
-    public static final MaterialIconType distilledLiquid = new MaterialIconType("distilled_liquid");
     public static final MaterialIconType gas = new MaterialIconType("gas");
     public static final MaterialIconType plasma = new MaterialIconType("plasma");
     public static final MaterialIconType ore = new MaterialIconType("ore");
